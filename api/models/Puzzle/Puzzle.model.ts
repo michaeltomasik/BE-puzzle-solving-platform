@@ -7,5 +7,6 @@ export const Puzzle = sequelize.define<PuzzleInstance>('Puzzle', {
   name: DataTypes.STRING,
   status: DataTypes.STRING,
   inputValues: DataTypes.STRING,
-  solution: DataTypes.INTEGER,
+  solution: DataTypes.STRING,
+  puzzleType: DataTypes.INTEGER,
 });

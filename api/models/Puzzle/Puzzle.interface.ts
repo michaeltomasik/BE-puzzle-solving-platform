@@ -4,6 +4,7 @@ export interface PuzzleInstance extends Model {
   name: string;
   status: string;
   inputValues: string;
-  solution: number;
+  solution: string;
   userId: number;
+  puzzleType: number;
 }

@@ -13,7 +13,8 @@ const puzzleController = {
         UserId: req.body.user.id,
         inputValues: generatePuzzle(puzzleType),
         solution: null,
-        status: 'not_completed'
+        status: 'not_completed',
+        puzzleType,
       });
       res.status(201).json(puzzle);
     } catch (error) {
@@ -34,8 +35,8 @@ const puzzleController = {
       if (!puzzle) {
         return res.status(STATUS_CODES.UNAUTHORIZED).send();
       }
-      const solution = req.body.solution;
-      const correctSolution = checkSolution(puzzleType, puzzle.inputValues)
+      const solution = String(req.body.solution);
+      const correctSolution = String(checkSolution(puzzleType, puzzle.inputValues))
   
       if (_isEqual(solution, correctSolution)) {
         puzzle.status = 'completed';

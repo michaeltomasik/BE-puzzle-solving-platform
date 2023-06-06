@@ -18,10 +18,10 @@ const solutionValidator = [
   () => {}, // 0
   (inputValues: string) => {
     const { value1, value2 } = JSON.parse(inputValues)
-    return value1 + value2
+    return (value1 + value2)
   }, // 1
   (inputValues: string) => {
-    return _reverse(_sortBy(JSON.parse(inputValues)))
+    return (_reverse(_sortBy(JSON.parse(inputValues))))
   }, // 2
 ]
 export const checkSolution = (puzzleType: number, inputValues: string) =>
